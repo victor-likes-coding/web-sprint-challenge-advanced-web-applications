@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import PT from "prop-types";
 
-export default function Articles({ getArticles, articles, setCurrentArticle }) {
+export default function Articles({ getArticles, articles, setCurrentArticle, deleteArticle }) {
     // ✨ where are my props? Destructure them here
 
     // ✨ implement conditional logic: if no token exists
@@ -38,11 +38,7 @@ export default function Articles({ getArticles, articles, setCurrentArticle }) {
                               </div>
                               <div>
                                   <button onClick={() => setCurrentArticle(art)}>Edit</button>
-                                  <button
-                                      disabled={true}
-                                      onClick={Function.prototype}>
-                                      Delete
-                                  </button>
+                                  <button onClick={() => deleteArticle(art.article_id)}>Delete</button>
                               </div>
                           </div>
                       );
